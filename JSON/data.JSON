@@ -14,7 +14,7 @@
     {
         "name": "二郎ラーメン",
         "category": "ラーメン",
-        "image": "img/jiro.png",
+        "image": "img/二郎.png",
         "price": "¥1,100"
     },
     {
@@ -36,5 +36,6 @@
         "price": "¥550"
     }
 ]
+
 
 
