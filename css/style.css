@@ -276,12 +276,59 @@ footer {
 
 
 
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 20px;
+  }
+
+  header h1 {
+    font-size: 22px;
+  }
+
+  /* メインビジュアル調整 */
+  .hero h2 {
+    font-size: 22px;
+  }
+
+  /* メニュー縦並び */
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .menu-item {
+    width: 90%;
+  }
+
+  .menu-item h3 {
+    font-size: 16px;
+  }
+
+  footer {
+    font-size: 13px;
+  }
+}
+
+
+
+
+
+
+
 
 
 
 
 
   
+
 
 
 
