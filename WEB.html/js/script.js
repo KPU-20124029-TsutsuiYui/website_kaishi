@@ -1,9 +1,11 @@
+// data.jsonからメニュー情報を取得して表示
 async function loadMenu() {
   try {
     const response = await fetch("../JSON/data.json");
     const menuData = await response.json();
     displayMenu(menuData);
 
+    // 検索ボタンのイベント
     const searchBtn = document.getElementById("searchButton");
     const searchInput = document.getElementById("searchInput");
 
@@ -12,6 +14,7 @@ async function loadMenu() {
       filterMenu(menuData, keyword);
     });
 
+    // Enter1キーで検索
     searchInput.addEventListener("keypress", (e) => {
       if (e.key === "Enter") {
         e.preventDefault();
@@ -25,6 +28,7 @@ async function loadMenu() {
   }
 }
 
+// メニューの一覧表示
 function displayMenu(menuItems) {
   const menuList = document.getElementById("menuList");
   menuList.innerHTML = "";
@@ -48,6 +52,7 @@ function displayMenu(menuItems) {
   });
 }
 
+// 検索機能
 function filterMenu(menuData, keyword) {
   if (!keyword) {
     displayMenu(menuData);
@@ -61,4 +66,5 @@ function filterMenu(menuData, keyword) {
   displayMenu(filtered);
 }
 
+// ページ読み込み時にメニューを表示
 loadMenu();
