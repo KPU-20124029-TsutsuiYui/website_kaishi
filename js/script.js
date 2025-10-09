@@ -1,7 +1,7 @@
 // data.jsonからメニュー情報を取得して表示
 async function loadMenu() {
   try {
-    const response = await fetch("data.json");
+    const response = await fetch("JSON/data.json");
     const menuData = await response.json();
     displayMenu(menuData);
 
@@ -68,4 +68,5 @@ function filterMenu(menuData, keyword) {
 
 // ページ読み込み時にメニューを表示
 loadMenu();
+
 
