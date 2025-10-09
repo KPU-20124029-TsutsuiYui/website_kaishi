@@ -13,13 +13,13 @@
     },
     {
         "name": "二郎ラーメン",
-        "category": "麺",
+        "category": "ラーメン",
         "image": "img/二郎.png",
         "price": "¥1,100"
     },
     {
         "name": "カルボ麺",
-        "category": "麺",
+        "category": "ラーメン",
         "image": "img/カルボ.jpg",
         "price": "¥950"
     },
@@ -36,3 +36,4 @@
         "price": "¥550"
     }
 ]
+
