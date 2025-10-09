@@ -277,42 +277,103 @@ footer {
 
 
 @media screen and (max-width: 768px) {
+
+  /* 全体の余白と文字サイズを少し大きめに */
   body {
-    font-size: 14px;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
   }
 
   header {
     flex-direction: column;
     text-align: center;
-    padding: 10px 20px;
+    padding: 10px 0;
   }
 
   header h1 {
     font-size: 22px;
+    margin-bottom: 10px;
   }
 
-  /* メインビジュアル調整 */
-  .hero h2 {
-    font-size: 22px;
-  }
-
-  /* メニュー縦並び */
-  .menu {
+  nav ul {
     flex-direction: column;
-    align-items: center;
-    gap: 15px;
+    gap: 8px;
   }
 
-  .menu-item {
-    width: 90%;
+  nav li {
+    margin: 0;
   }
 
-  .menu-item h3 {
+  nav a {
     font-size: 16px;
   }
 
+  /* セクション全体の余白を調整 */
+  .section {
+    padding: 40px 15px;
+  }
+
+  .section h2 {
+    font-size: 20px;
+  }
+
+  .section p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* メニュー一覧を1列表示 */
+  .menu-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-item {
+    width: 85%;
+    height: auto;
+  }
+
+  .menu-item img {
+    width: 70%;
+    height: auto;
+  }
+
+  /* アクセス部分の縦並び */
+  .access-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .map-img {
+    width: 100%;
+  }
+
+  .access-info {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  /* 検索フォーム */
+  .search-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-container input {
+    width: 90%;
+    font-size: 14px;
+  }
+
+  .search-container button {
+    width: 50%;
+    font-size: 14px;
+  }
+
+  /* フッター */
   footer {
-    font-size: 13px;
+    font-size: 12px;
+    padding: 10px;
   }
 }
 
@@ -325,9 +386,8 @@ footer {
 
 
 
-
-
   
+
 
 
 
