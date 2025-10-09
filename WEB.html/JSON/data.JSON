@@ -1,0 +1,38 @@
+[
+    {
+        "name": "コーヒー",
+        "category": "ドリンク",
+        "image": "img/コーヒー.jpg",
+        "price": "¥1,500"
+    },
+    {
+        "name": "カフェラテ",
+        "category": "ドリンク",
+        "image": "img/カフェラテ.jpg",
+        "price": "¥420"
+    },
+    {
+        "name": "二郎ラーメン",
+        "category": "麺",
+        "image": "img/二郎.png",
+        "price": "¥1,100"
+    },
+    {
+        "name": "カルボ麺",
+        "category": "麺",
+        "image": "img/カルボ.jpg",
+        "price": "¥950"
+    },
+    {
+        "name": "ショートケーキ",
+        "category": "ケーキ",
+        "image": "img/イチゴ.jpg",
+        "price": "¥450"
+    },
+    {
+        "name": "抹茶ケーキ",
+        "category": "ケーキ",
+        "image": "img/抹茶.jpg",
+        "price": "¥550"
+    }
+]
