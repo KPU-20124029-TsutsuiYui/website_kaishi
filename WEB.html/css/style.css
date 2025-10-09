@@ -1,11 +1,10 @@
-
+/*デフォルト設定*/
 body {
   font-family: "Hiragino Kaku Gothic ProN", sans-serif;
   margin: 0;
   background-color: #faf8f5;
   color: #333;
 }
-
 
 header {
   display: flex;
@@ -68,7 +67,6 @@ nav a:hover {
   z-index: 1;
 }
 
-
 .section {
   padding: 60px 20px;
   text-align: center;
@@ -91,7 +89,6 @@ nav a:hover {
 .menu-list li {
   margin: 10px 0;
 }
-
 
 form {
   display: flex;
@@ -131,7 +128,6 @@ footer {
   font-size: 14px;
 }
 
-
 .head {
   background-color: #6b4c3b;
   padding: 30px 20px;
@@ -160,23 +156,7 @@ footer {
   line-height: 1.6;        
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*メニュー*/
 .menu-list {
   display: flex;
   flex-wrap: wrap;
@@ -225,18 +205,36 @@ footer {
   color: #8b5e3c;
 }
 
+/*検索*/
+.search-container{
+  margin: 20px auto 40px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
 
+#searchInput{
+  width: 250px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
 
+#searchButton{
+  background-color: #8b5e3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
 
+#searchButton:hover {
+  background-color: #a07352;
+}
 
-
-
-
-
-
-
-
-
+/*アクセス*/
 .access {
   background-color: #6b4c3b;  
   padding: 40px 20px;
@@ -284,6 +282,7 @@ footer {
 
 
   
+
 
 
 
