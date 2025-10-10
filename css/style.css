@@ -379,7 +379,7 @@ footer {
   }
   
   .hero img{
-    width: 40%;   /* 画面に合わせて少し大きく */
+    width: 100%;   /* 画面に合わせて少し大きく */
     height: auto;
     top: 40%;  
   }
@@ -389,6 +389,7 @@ footer {
     height: 300px;   /* 高さ調整 */
   }
 }
+
 
 
 
