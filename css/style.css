@@ -47,6 +47,7 @@ nav a:hover {
   color: white;
   text-align: center;
   padding: 120px 20px;
+  background-color: rgba(0,0,0,0.3);
 }
 
 .hero img {
@@ -373,6 +374,7 @@ footer {
     font-size: 24px;
   }
 }
+
 
 
 
