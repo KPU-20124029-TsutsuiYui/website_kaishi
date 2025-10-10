@@ -42,23 +42,23 @@ nav a:hover {
 }
 
 .hero {
-  position: relative; /* 画像をこの範囲内に収める */
-  text-align: center;
+  background-size: cover;
+  background-position: center;
   color: white;
+  text-align: center;
   padding: 120px 20px;
-  overflow: hidden; /* 画像のはみ出し防止 */
+  background-color: rgba(0,0,0,0.3);
 }
 
 .hero img {
   position: absolute;
-  top: 0; /* 固定値削除＆修正 */
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* 比率を保ったまま埋める */
-  opacity: 0.5;
+  top: 40.9%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%; 
+  height: 52%;
+  opacity: 0.5;      
   z-index: 0;
-  pointer-events: none;
 }
 
 .hero h2,
@@ -375,48 +375,14 @@ footer {
   }
 
   .hero {
-    padding: 80px 20px;
+    padding: 100px 20px;
   }
   
   .hero img{
-    width: 100%;   
-    height: 100%;
-    top: 0;      
+    width: 100%;   /* 画面に合わせて少し大きく */
+    height: 40%;
+    top: 20%;  
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
