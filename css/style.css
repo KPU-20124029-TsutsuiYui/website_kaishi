@@ -1,10 +1,10 @@
-/*1枚目のホーム*/
+/*トップページ*/
 body {
   font-family: "Hiragino Kaku Gothic ProN", sans-serif;
   margin: 0;
   background-color: #faf8f5;
+  color: #333;
 }
-
 
 header {
   display: flex;
@@ -47,6 +47,7 @@ nav a:hover {
   color: white;
   text-align: center;
   padding: 120px 20px;
+  background-color: rgba(0,0,0,0.3);
 }
 
 .hero img {
@@ -65,7 +66,6 @@ nav a:hover {
   position: relative;
   z-index: 1;
 }
-
 
 .section {
   padding: 60px 20px;
@@ -89,7 +89,6 @@ nav a:hover {
 .menu-list li {
   margin: 10px 0;
 }
-
 
 form {
   display: flex;
@@ -120,7 +119,6 @@ form button:hover {
   background-color: #a07352;
 }
 
-
 footer {
   background-color: #8b5e3c;
   color: white;
@@ -128,7 +126,6 @@ footer {
   padding: 10px;
   font-size: 14px;
 }
-
 
 .head {
   background-color: #6b4c3b;
@@ -159,22 +156,7 @@ footer {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*二枚目のメニュー*/
+/*メニューページ*/
 .menu-list {
   display: flex;
   flex-wrap: wrap;
@@ -224,11 +206,6 @@ footer {
 }
 
 
-
-
-
-
-
 /*検索*/
 .search-container{
   margin: 20px auto 40px;
@@ -259,19 +236,66 @@ footer {
 }
 
 
+/* メニュー詳細ポップアップ */
+.menu-detail-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fffaf5;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  z-index: 1000;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  display: none;
+}
+
+.menu-detail-popup img {
+  width: 60%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.menu-detail-popup h3 {
+  margin-bottom: 10px;
+  color: #5a3e2b;
+}
+
+.menu-detail-popup p {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.menu-detail-popup .close-btn {
+  background-color: #8b5e3c;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.menu-detail-popup .close-btn:hover {
+  background-color: #a07352;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 999;
+  display: none;
+}
 
 
-
-
-
-
-
-
-
-
-
-
-/*三枚目のアクセス*/
+/*アクセスページ*/
 .access {
   background-color: #6b4c3b;  
   padding: 40px 20px;
@@ -306,74 +330,6 @@ footer {
 
 .access-info p {
   margin: 8px 0;
-}
-
-
-
-
-
-
-
-
-
-
-/* メニュー詳細ポップアップ */
-.menu-detail-popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fffaf5;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-  z-index: 1000;
-  max-width: 400px;
-  width: 90%;
-  text-align: center;
-  display: none; /* 初期は非表示 */
-}
-
-.menu-detail-popup img {
-  width: 60%;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-
-.menu-detail-popup h3 {
-  margin-bottom: 10px;
-  color: #5a3e2b;
-}
-
-.menu-detail-popup p {
-  margin-bottom: 10px;
-  color: #555;
-}
-
-.menu-detail-popup .close-btn {
-  background-color: #8b5e3c;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.menu-detail-popup .close-btn:hover {
-  background-color: #a07352;
-}
-
-/* 背景のオーバーレイ */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.4);
-  z-index: 999;
-  display: none;
 }
 
 
@@ -428,6 +384,7 @@ footer {
     font-size: 24px;
   }
 }
+
 
 
 
