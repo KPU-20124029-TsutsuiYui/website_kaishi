@@ -375,7 +375,7 @@ footer {
   }
 
   .hero {
-    padding: 80px 20px;
+    padding: 100px 20px;
   }
   
   .hero img{
@@ -384,6 +384,7 @@ footer {
     top: 50%;      /* 中央に揃える */
   }
 }
+
 
 
 
