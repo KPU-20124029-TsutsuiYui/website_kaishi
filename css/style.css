@@ -384,6 +384,12 @@ footer {
     align-items: center;
   }
 
+  .hero img{
+    width: 150%;
+    height: auto;
+    top: 30%;
+  }
+
   .coffee-img, .map-img{
     width: 80%;
   }
@@ -418,6 +424,7 @@ footer {
     font-size: 24px;
   }
 }
+
 
 
 
