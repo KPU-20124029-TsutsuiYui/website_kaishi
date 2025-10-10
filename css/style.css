@@ -388,16 +388,6 @@ footer {
     width: 80%;
   }
 
-  .hero{
-    padding: 80px, 20px;
-  }
-
-  .hero img{
-    width: 150%;
-    height: auto;
-    top: 30%;
-  }
-
   .heading{
     font-size: 20px;
   }
@@ -428,6 +418,7 @@ footer {
     font-size: 24px;
   }
 }
+
 
 
 
