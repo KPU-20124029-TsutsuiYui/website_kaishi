@@ -375,7 +375,7 @@ footer {
   }
 
   .hero {
-    padding: 40px 20px;
+    padding: 60px 20px;
   }
   
   .hero img{
@@ -389,6 +389,7 @@ footer {
     height: 300px;   /* 高さ調整 */
   }
 }
+
 
 
 
