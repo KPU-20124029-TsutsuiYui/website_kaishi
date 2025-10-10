@@ -383,7 +383,13 @@ footer {
     height: auto;
     top: 50%;  
   }
+
+   iframe {
+    width: 90%;      /* 画面幅に合わせる */
+    height: 300px;   /* 高さ調整 */
+  }
 }
+
 
 
 
