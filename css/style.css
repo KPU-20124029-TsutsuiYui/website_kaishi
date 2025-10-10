@@ -384,6 +384,10 @@ footer {
     align-items: center;
   }
 
+  .hero{
+    padding: 80px, 20px;
+  }
+
   .hero img{
     width: 150%;
     height: auto;
@@ -424,6 +428,7 @@ footer {
     font-size: 24px;
   }
 }
+
 
 
 
