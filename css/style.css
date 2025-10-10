@@ -380,10 +380,11 @@ footer {
   
   .hero img{
     width: 100%;   /* 画面に合わせて少し大きく */
-    height: 40%;
+    height: auto;
     top: 20%;  
   }
 }
+
 
 
 
