@@ -375,13 +375,13 @@ footer {
   }
 
   .hero {
-    padding: 80px 20px;
+    padding: 40px 20px;
   }
   
   .hero img{
-    width: 100%;   /* 画面に合わせて少し大きく */
+    width: 40%;   /* 画面に合わせて少し大きく */
     height: auto;
-    top: 50%;  
+    top: 40%;  
   }
 
    iframe {
@@ -389,6 +389,7 @@ footer {
     height: 300px;   /* 高さ調整 */
   }
 }
+
 
 
 
