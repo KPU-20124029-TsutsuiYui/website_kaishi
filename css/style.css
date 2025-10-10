@@ -373,7 +373,14 @@ footer {
   .access h2{
     font-size: 24px;
   }
+
+  .hero img{
+    width: 120%;   /* 画面に合わせて少し大きく */
+    height: auto;
+    top: 50%;      /* 中央に揃える */
+  }
 }
+
 
 
 
