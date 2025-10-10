@@ -381,7 +381,7 @@ footer {
   .hero img{
     width: 80%;   /* 画面に合わせて少し大きく */
     height: auto;
-    top: 80%;  
+    top: 40%;  
   }
 
    iframe {
@@ -389,6 +389,7 @@ footer {
     height: 300px;   /* 高さ調整 */
   }
 }
+
 
 
 
