@@ -379,6 +379,68 @@ footer {
 }
 
 
+/*レスポンシブデザイン・スマホ*/
+@media screen and (max-width: 768px){
+  .content, .access-content{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .coffee-img, .map-img{
+    width: 80%;
+  }
+
+  .hero{
+    padding: 80px, 20px;
+  }
+
+  .hero img{
+    width: 150%;
+    height: auto;
+    top: 30%;
+  }
+
+  .heading{
+    font-size: 20px;
+  }
+
+  nav li{
+    margin-left: 10px;
+  }
+
+  .menu-item{
+    width: 80%;
+    height: auto;;
+  }
+
+  .menu-item img{
+    width: 60%;
+    height: auto;
+  }
+
+  form input, form textarea{
+    width: 90%;
+  }
+
+  #searchInput{
+    width: 60%;
+  }
+
+  .access h2{
+    font-size: 24px;
+  }
+
+  .access-content{
+    text-align: center;;
+  }
+
+  .access-info{
+    font-size: 14px;
+    width: 100%;
+    line-height: 1.4;
+    padding: 10px;
+  }
+}
 
 
 
