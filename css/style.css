@@ -42,25 +42,24 @@ nav a:hover {
 }
 
 .hero {
+   position: relative;
+  text-align: center;
+  padding: 100px 20px;
+  background-image: url('../img/coffee-bg.jpg'); /* コーヒーの背景画像 */
   background-size: cover;
   background-position: center;
-  color: white;
-  text-align: center;
-  padding: 120px 20px;
-  background-color: rgba(0,0,0,0.3);
+  color: #fff;
 }
 
 .hero img {
   position: absolute;
-  top: 40.9%;
-  left: 50%;
+  top: 40%;
   transform: translate(-50%, -50%);
   width: 100%; 
-  height: 52%;
+  height: 100%;
   opacity: 0.5;      
   z-index: 0;
 }
-
 .hero h2,
 .hero p {
   position: relative;
@@ -389,6 +388,7 @@ footer {
     height: 300px;   /* 高さ調整 */
   }
 }
+
 
 
 
