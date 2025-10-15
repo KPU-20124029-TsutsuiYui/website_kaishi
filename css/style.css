@@ -155,6 +155,80 @@ footer {
 }
 
 
+/*ハンバーガーメニュー*/
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+}
+.hamburger span {
+  display: block;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+/*アニメーション（×マーク）*/
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/*ドロップダウンメニュー */
+.nav-menu {
+  display: flex;
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 160px;
+    padding: 10px 0;
+    z-index: 999;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-menu a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .nav-menu a:hover {
+    text-decoration: underline;
+  }
+}
+
+
 /*メニューページ*/
 .menu-list {
   display: flex;
@@ -388,6 +462,7 @@ footer {
     height: 300px;   /* 高さ調整 */
   }
 }
+
 
 
 
