@@ -154,6 +154,36 @@ footer {
   line-height: 1.6;        
 }
 
+/*ハンバーガーメニュー*/
+.hamburger{
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width:25px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.hamburger span{
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/*メニュー開閉*/
+.hamburger.active span:nth-child(1){
+  transform: rotate(45deg) translateY(7px);
+}
+.hamburger.active span:nth-child(2){
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3){
+  transform: rotate(-45deg) translateY(-7px);
+}
+
 
 /*メニューページ*/
 .menu-list {
@@ -347,10 +377,6 @@ footer {
     font-size: 20px;
   }
 
-  nav li{
-    margin-left: 10px;
-  }
-
   .menu-item{
     width: 80%;
     height: auto;;
@@ -387,7 +413,44 @@ footer {
     width: 90%;      /* 画面幅に合わせる */
     height: 300px;   /* 高さ調整 */
   }
+
+  .hamburger{
+    display: flex;
+  }
+
+  nav{
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #8b5e3c;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    z-index: 100;
+  }
+  nav ul{
+    flex-direction: column;
+    padding: 20px 0;
+  }
+  nav li{
+    margin-left: 10px;
+    margin: 15px 0;
+  }
+  nav a{
+    font-size: 18px;
+  }
+  nav.active{
+    display: flex;
+    animation: slideDown 0.3s ease;
+  }
+
+  @keyframes slideDown{
+    from {opacity: 0; transform: translateY(-10px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
 }
+
 
 
 
