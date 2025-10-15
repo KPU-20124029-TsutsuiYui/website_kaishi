@@ -414,10 +414,6 @@ footer {
     font-size: 20px;
   }
 
-  nav li{
-    margin-left: 10px;
-  }
-
   .menu-item{
     width: 80%;
     height: auto;;
@@ -455,6 +451,7 @@ footer {
     height: 300px;   /* 高さ調整 */
   }
 }
+
 
 
 
