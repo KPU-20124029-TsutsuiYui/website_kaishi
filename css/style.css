@@ -181,9 +181,18 @@ footer {
   transform: rotate(-45deg) translateY(-8px);
 }
 
+.nav-menu {
+  display: flex;
+  position: relative;
+}
+
 @media screen and (max-width: 768px){
   .hamburger {
     display: flex;
+  }
+
+  nav ul{
+    display: none;
   }
 
   .nav-menu {
@@ -205,9 +214,6 @@ footer {
   .nav-menu ul {
     flex-direction: column;
     gap: 15px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
   }
 
   .nav-menu a {
@@ -413,6 +419,10 @@ footer {
      font-size: 20px;
   }
 
+  nav li{
+    margin-left: 10px;
+  }
+
   .menu-item{
     width: 80%;
     height: auto;
@@ -443,4 +453,3 @@ footer {
     padding: 10px;
   }
 }
-
