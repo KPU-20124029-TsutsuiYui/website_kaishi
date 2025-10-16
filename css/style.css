@@ -207,9 +207,9 @@ footer {
     display: flex;
   }
   .nav-menu ul {
-    display: none;
+    display: flex;
+    gap: 15px;
   }
-
   .nav-menu a {
     color: white;
     font-weight: bold;
@@ -443,3 +443,4 @@ footer {
     padding: 10px;
   }
 }
+
