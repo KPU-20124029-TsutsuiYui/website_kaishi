@@ -419,10 +419,6 @@ footer {
      font-size: 20px;
   }
 
-  nav li{
-    margin-left: 10px;
-  }
-
   .menu-item{
     width: 80%;
     height: auto;
@@ -453,3 +449,4 @@ footer {
     padding: 10px;
   }
 }
+
