@@ -385,6 +385,83 @@ footer {
 }
 
 
+/*ハンバーガーメニュー*/
+
+/* 初期状態では非表示（PC） */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1100; /* メニューより上に */
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+  transition: 0.4s;
+}
+
+/* スマホサイズで表示 */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  /* 通常は非表示 */
+  nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    padding: 20px 0;
+    z-index: 1000;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  nav a {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  /* メニュー表示時 */
+  nav.active {
+    display: block;
+    animation: fadeIn 0.4s ease;
+  }
+
+  /* ハンバーガー変形アニメーション */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+
+
 
 
 
