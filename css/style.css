@@ -186,10 +186,6 @@ footer {
     display: flex;
   }
 
-  nav ul{
-    display: none;
-  }
-
   .nav-menu {
     display: none;
     position: absolute;
@@ -447,3 +443,4 @@ footer {
     padding: 10px;
   }
 }
+
