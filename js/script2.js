@@ -1,31 +1,43 @@
+// JSONを読み込んでカテゴリーごとに表示
+fetch("data.json")
+  .then(res => res.json())
+  .then(data => displayMenuByCategory(data))
+  .catch(err => console.error("メニューの読み込みに失敗しました:", err));
 
-function displayMenu(menuItems) {
-  const menuList = document.getElementById("menuList");
-  menuList.innerHTML = "";
+function displayMenuByCategory(menuItems) {
+  const drinkList = document.getElementById("drinkList");
+  const noodleList = document.getElementById("noodleList");
+  const sweetList = document.getElementById("sweetList");
 
-  if (menuItems.length === 0) {
-    menuList.innerHTML = "<p>該当する商品が見つかりません。</p>";
-    return;
-  }
+  // カテゴリごとに仕分け
+  const drinks = menuItems.filter(i => i.category === "ドリンク");
+  const noodles = menuItems.filter(i => i.category === "麺");
+  const sweets = menuItems.filter(i => i.category === "ケーキ");
 
-  menuItems.forEach(item => {
+  createMenuItems(drinks, drinkList);
+  createMenuItems(noodles, noodleList);
+  createMenuItems(sweets, sweetList);
+}
+
+function createMenuItems(items, container) {
+  container.innerHTML = "";
+
+  items.forEach(item => {
     const div = document.createElement("div");
     div.classList.add("menu-item");
 
+    // 🔥 ここが重要：バッククォート（``）で囲む！
     div.innerHTML = `
       <img src="${item.image}" alt="${item.name}">
       <h3>${item.name}</h3>
       <span class="price">${item.price}</span>
     `;
 
-    // クリックで詳細表示
     div.addEventListener("click", () => showDetail(item));
-
-    menuList.appendChild(div);
+    container.appendChild(div);
   });
 }
 
-// 詳細表示関数
 function showDetail(item) {
   document.getElementById("detailImage").src = item.image;
   document.getElementById("detailImage").alt = item.name;
@@ -37,18 +49,10 @@ function showDetail(item) {
   document.getElementById("overlay").style.display = "block";
 }
 
-// 閉じるボタン
-document.getElementById("closeDetail").addEventListener("click", () => {
+document.getElementById("closeDetail").addEventListener("click", closeDetail);
+document.getElementById("overlay").addEventListener("click", closeDetail);
+
+function closeDetail() {
   document.getElementById("menuDetail").style.display = "none";
   document.getElementById("overlay").style.display = "none";
-});
-
-// オーバーレイクリックでも閉じる
-document.getElementById("overlay").addEventListener("click", () => {
-  document.getElementById("menuDetail").style.display = "none";
-  document.getElementById("overlay").style.display = "none";
-});
-
-
-
-
+}
