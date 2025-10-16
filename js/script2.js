@@ -1,3 +1,4 @@
+
 function displayMenu(menuItems) {
   const menuList = document.getElementById("menuList");
   menuList.innerHTML = "";
@@ -47,3 +48,12 @@ document.getElementById("overlay").addEventListener("click", () => {
   document.getElementById("menuDetail").style.display = "none";
   document.getElementById("overlay").style.display = "none";
 });
+
+document.querySelectorAll('.category-tabs button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const cat = btn.dataset.category;
+    const filtered = cat === "all" ? menuItems : menuItems.filter(item => item.category === cat);
+    displayMenu(filtered);
+  });
+});
+
