@@ -583,3 +583,80 @@ footer {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== カテゴリー別横スクロール ===== */
+.category-container {
+  margin: 40px 0;
+}
+
+.category-title {
+  font-size: 22px;
+  color: #8b5e3c;
+  text-align: left;
+  margin-left: 15px;
+  border-left: 4px solid #8b5e3c;
+  padding-left: 8px;
+}
+
+.category-list {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 15px;
+  scroll-snap-type: x mandatory;
+}
+
+.category-list::-webkit-scrollbar {
+  height: 6px;
+}
+.category-list::-webkit-scrollbar-thumb {
+  background-color: #8b5e3c;
+  border-radius: 3px;
+}
+.category-list::-webkit-scrollbar-track {
+  background: #f0e8df;
+}
+
+/* スマホ用サイズ調整 */
+@media screen and (max-width: 768px) {
+  .category-list {
+    padding: 10px 5px;
+  }
+
+  .menu-item {
+    flex: 0 0 180px;
+    scroll-snap-align: start;
+  }
+
+  .menu-item img {
+    width: 70%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
