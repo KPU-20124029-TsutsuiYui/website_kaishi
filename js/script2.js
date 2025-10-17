@@ -1,15 +1,34 @@
-function displayMenu(menuItems) {
-  const menuList = document.getElementById("menuList");
-  menuList.innerHTML = "";
+fetch("data.json")
+  .then(res => res.json())
+  .then(data => displayCategories(data));
 
-  if (menuItems.length === 0) {
-    menuList.innerHTML = "<p>該当する商品が見つかりません。</p>";
-    return;
-  }
+function displayCategories(menuItems) {
+  const categoriesDiv = document.getElementById("categories");
+  categoriesDiv.innerHTML = "";
 
+  // カテゴリーごとに分ける
+  const categories = {};
   menuItems.forEach(item => {
-    const div = document.createElement("div");
-    div.classList.add("menu-item");
+    if (!categories[item.category]) categories[item.category] = [];
+    categories[item.category].push(item);
+  });
+
+  // カテゴリーごとに作成
+  for (const [category, items] of Object.entries(categories)) {
+    const container = document.createElement("div");
+    container.classList.add("category-container");
+
+    const title = document.createElement("h3");
+    title.classList.add("category-title");
+    title.textContent = category;
+    container.appendChild(title);
+
+    const list = document.createElement("div");
+    list.classList.add("category-list");
+
+    items.forEach(item => {
+      const div = document.createElement("div");
+      div.classList.add("menu-item");
 
     div.innerHTML = `
       <img src="${item.image}" alt="${item.name}">
@@ -47,5 +66,6 @@ document.getElementById("overlay").addEventListener("click", () => {
   document.getElementById("menuDetail").style.display = "none";
   document.getElementById("overlay").style.display = "none";
 });
+
 
 
