@@ -1,30 +1,30 @@
 fetch("data.json")
   .then(res => res.json())
-  .then(data => displayCategories(data));
+  .then(data => displaycategories(data));
 
-function displayCategories(menuItems) {
+function displaycategories(menuItems) {
   const categoriesDiv = document.getElementById("categories");
   categoriesDiv.innerHTML = "";
 
   // カテゴリーごとに分ける
   const categories = {};
   menuItems.forEach(item => {
-    if (!categories[item.category]) categories[item.category] = [];
-    categories[item.category].push(item);
+    if (!categories[item.categories]) categories[item.categories] = [];
+    categories[item.categories].push(item);
   });
 
   // カテゴリーごとに作成
-  for (const [category, items] of Object.entries(categories)) {
+  for (const [categories, items] of Object.entries(categories)) {
     const container = document.createElement("div");
-    container.classList.add("category-container");
+    container.classList.add("categories-container");
 
     const title = document.createElement("h3");
-    title.classList.add("category-title");
-    title.textContent = category;
+    title.classList.add("categories-title");
+    title.textContent = categories;
     container.appendChild(title);
 
     const list = document.createElement("div");
-    list.classList.add("category-list");
+    list.classList.add("categories-list");
 
     items.forEach(item => {
       const div = document.createElement("div");
@@ -72,3 +72,4 @@ function closeDetail() {
   document.getElementById("menuDetail").style.display = "none";
   document.getElementById("overlay").style.display = "none";
 }
+
