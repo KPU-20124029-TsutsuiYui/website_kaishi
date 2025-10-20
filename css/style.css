@@ -45,8 +45,7 @@ nav a:hover {
   position: relative;
   text-align: center;
   padding: 100px 20px;
-  background-image: url('../img/coffee-bg.jpg');
-  /* コーヒーの背景画像 */
+  background-image: url('../img/coffee-bg.jpg'); /* コーヒーの背景画像 */
   background-size: cover;
   background-position: center;
   color: #fff;
@@ -56,12 +55,11 @@ nav a:hover {
   position: absolute;
   top: 40%;
   transform: translate(-50%, -50%);
-  width: 100%;
+  width: 100%; 
   height: 100%;
-  opacity: 0.5;
+  opacity: 0.5;      
   z-index: 0;
 }
-
 .hero h2,
 .hero p {
   position: relative;
@@ -140,29 +138,28 @@ footer {
 }
 
 .content {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
+  display: flex;          
+  gap: 20px;               
+  align-items: flex-start; 
 }
 
 .coffee-img {
-  width: 300px;
+  width: 300px;           
   height: auto;
-  border-radius: 10px;
+  border-radius: 10px;   
 }
 
 .content p {
-  flex: 1;
-  line-height: 1.6;
+  flex: 1;                 
+  line-height: 1.6;        
 }
 
 /*メニューページ*/
 .menu-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 30px;
-  margin-top: 20px;
-  list-style: none;
-  padding: 0;     
-  font-size: 18px; 
   margin-top: 20px;
 }
 
@@ -171,7 +168,7 @@ footer {
   height: 280px;
   background-color: #fffaf5;
   border-radius: 15px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   text-align: center;
   padding: 15px;
   transition: transform 0.3s;
@@ -208,14 +205,14 @@ footer {
 
 
 /*検索*/
-.search-container {
+.search-container{
   margin: 20px auto 40px;
   display: flex;
   justify-content: center;
   gap: 10px;
 }
 
-#searchInput {
+#searchInput{
   width: 250px;
   padding: 10px;
   border: 1px solid #ccc;
@@ -223,7 +220,7 @@ footer {
   font-size: 16px;
 }
 
-#searchButton {
+#searchButton{
   background-color: #8b5e3c;
   color: white;
   border: none;
@@ -246,7 +243,7 @@ footer {
   background-color: #fffaf5;
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
   z-index: 1000;
   max-width: 400px;
   width: 90%;
@@ -290,7 +287,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0,0,0,0.4);
   z-index: 999;
   display: none;
 }
@@ -298,16 +295,16 @@ footer {
 
 /*アクセスページ*/
 .access {
-  background-color: #6b4c3b;
+  background-color: #6b4c3b;  
   padding: 40px 20px;
-  color: white;
+  color: white;               
 }
 
 .access h2 {
   margin-bottom: 20px;
   text-align: left;
   font-size: 28px;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #fff; 
   display: inline-block;
   padding-bottom: 5px;
 }
@@ -335,91 +332,62 @@ footer {
 
 
 /*レスポンシブデザイン・スマホ*/
-@media screen and (max-width: 768px) {
-
-  .content,
-  .access-content {
+@media screen and (max-width: 768px){
+  .content, .access-content{
     flex-direction: column;
     align-items: center;
   }
 
-  .coffee-img,
-  .map-img {
+  .coffee-img, .map-img{
     width: 80%;
   }
 
-  .heading {
+  .heading{
     font-size: 20px;
   }
 
-  .menu-item {
-    width: 280PX;
-    flex-shrink: 0; /* 必須: アイテムが縮小されるのを防ぎ、固定幅を維持 */
-    height: auto;
-    scroll-snap-align: start;
-    ;
+  .menu-item{
+    width: 80%;
+    height: auto;;
   }
 
-  .menu-item img {
-    width: 100%;
+  .menu-item img{
+    width: 60%;
     height: auto;
   }
 
-    /* 3列に収まるように、文字サイズを微調整 */
-    .menu-item h3 {
-        font-size: 0.9em;
-    }
-    .menu-item .price {
-        font-size: 0.8em; 
-    }
-    /* カテゴリ見出しの調整 */
-    .category-heading {
-        font-size: 1.5em; 
-        margin-top: 30px;
-        margin-bottom: 15px;
-    }
-
-
-
-
-  
-
-  form input,
-  form textarea {
+  form input, form textarea{
     width: 90%;
   }
 
-  #searchInput {
+  #searchInput{
     width: 60%;
   }
 
-  .access h2 {
+  .access h2{
     font-size: 24px;
   }
 
   .hero {
     padding: 80px 20px;
   }
-
-  .hero img {
-    width: 80%;
-    /* 画面に合わせて少し大きく */
+  
+  .hero img{
+    width: 80%;   
     height: auto;
-    top: 40%;
+    top: 40%;  
   }
 
-  iframe {
-    width: 90%;
-    /* 画面幅に合わせる */
-    height: 300px;
-    /* 高さ調整 */
+   iframe {
+    width: 90%;      
+    height: 300px;   
   }
 }
 
 
 /*ハンバーガーメニュー*/
 
-/* 初期状態では非表示（PC） */
+/*初期状態では非表示（PC）*/
 .hamburger {
   display: none;
   flex-direction: column;
@@ -427,8 +395,7 @@ footer {
   width: 28px;
   height: 20px;
   cursor: pointer;
-  z-index: 1100;
-  /* メニューより上に */
+  z-index: 1100; /*メニューより上に*/
 }
 
 .hamburger span {
@@ -439,13 +406,13 @@ footer {
   transition: 0.4s;
 }
 
-/* スマホサイズで表示 */
+/*スマホサイズで表示*/
 @media screen and (max-width: 768px) {
   .hamburger {
     display: flex;
   }
 
-  /* 通常は非表示 */
+  /*通常は非表示*/
   nav {
     display: none;
     position: absolute;
@@ -470,35 +437,29 @@ footer {
     text-decoration: none;
   }
 
-  /* メニュー表示時 */
+  /*メニュー表示時*/
   nav.active {
     display: block;
     animation: fadeIn 0.4s ease;
   }
 
-  /* ハンバーガー変形アニメーション */
+  /*ハンバーガー変形アニメーション*/
   .hamburger.active span:nth-child(1) {
     transform: rotate(45deg) translateY(3.5px) translateX(8px);
   }
   .hamburger.active span:nth-child(2) {
-    opacity: 0;
+    opacity: 0;    
   }
   .hamburger.active span:nth-child(3) {
-    transform: rotate(45deg) translateY(-3.5px) translateX(8px);
+    transform: rotate(-45deg) translateY(-3.5px) translateX(8px);
   }
 
   @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 }
+
 
 
 /*口コミページ*/
@@ -506,19 +467,24 @@ footer {
   background-color: #fffaf5;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   max-width: 500px;
   margin: 0 auto 40px;
   text-align: center;
 }
 
 .review-form input,
-.review-form textarea {
+.review-form textarea,
+.review-form select {
   width: 90%;
   padding: 10px;
   margin-bottom: 10px;
-  border-radius: 5px;
+  border-radius: 5px;;
   border: 1px solid #ccc;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: white;
+  font-size: 16px;
 }
 
 .star-rating {
@@ -573,6 +539,13 @@ footer {
   color: #5a3e2b;
 }
 
+.review-menu-info{
+  font-size: 14px;
+  color: #666;
+  text-align:  left;
+  margin: 5px 0;
+}
+
 .review-date {
   font-size: 12px;
   color: black;
@@ -615,27 +588,7 @@ footer {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*category別メニュー表示*/
+/* カテゴリー別メニュー表示 */
 .category-group {
   margin-bottom: 5px;
   text-align: left;
@@ -651,32 +604,8 @@ footer {
 }
 
 .menu-category-container {
- scroll-snap-type: x mandatory;
- overflow-x: auto;
   display: flex;
-  flex-wrap: nowrap;
-  gap: 30px;
-  justify-content:flex-start ;
-  padding: 0 15px;
-  padding-bottom: 15px;
-  -ms-overflow-style: none;
-        scrollbar-width: none;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: flex-start;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
