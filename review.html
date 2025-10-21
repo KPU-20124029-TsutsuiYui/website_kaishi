@@ -31,7 +31,15 @@
         <h2>口コミ投稿</h2>
         
         <div class="review-form">
-            <input type="text" id="username" placeholder="ユーザーネームを入力">
+            <div class="select-container">
+                <select id="categorySelect">
+                    <option value="">カテゴリーを選択</option>
+                </select>
+                <select id="menuSelect">
+                    <option value="">メニューを選択</option>
+                </select>
+            </div>
+
             <textarea id="comment" rows="4" placeholder="コメントを入力"></textarea>
             
             <div class="star-rating" id="starRating">
