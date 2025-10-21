@@ -504,7 +504,7 @@ footer {
   background-color: #fffaf5;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   max-width: 500px;
   margin: 0 auto 40px;
   text-align: center;
@@ -517,6 +517,37 @@ footer {
   margin-bottom: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: white;
+  font-size: 16px;
+}
+.review-form select {
+  flex: 1;
+  min-width: 0;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: white;
+  font-size: 16px;
+}
+
+.select-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 90%;
+  margin: 0 auto 10px;
+}
+
+.review-form select.placeholder-selected {
+  color: #666;
+}
+.review-form select option {
+  color: #333;
 }
 
 .star-rating {
@@ -558,9 +589,11 @@ footer {
   border-radius: 10px;
   padding: 15px 20px;
   margin-bottom: 15px;
+  position: relative;
+  text-align: left;
 }
 
-.review-header {
+/* .review-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -569,25 +602,48 @@ footer {
 .review-username {
   font-weight: bold;
   color: #5a3e2b;
+} */
+
+.review-menu-info{
+  font-size: 16px;
+  font-weight: bold;
+  color: #8b5e3c;
+  text-align:  left;
+  margin: 0 0 15px 0;
 }
 
 .review-date {
   font-size: 12px;
-  color: black;
+  color: #666;
+  position: absolute;
+  top: 15px;
+  right: 20px;
 }
 
 .review-stars {
   color: orange;
   font-size: 18px;
-  margin: 3px 0 5px 0;
+  margin: 0 0 5px 0;
   text-align: left;
 }
 
 .review-comment {
-  margin-top: 8px;
+  margin-top: 0;
   font-size: 15px;
   line-height: 1.6;
   text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+  .select-container {
+    display: flex;
+    width: 90%;
+    gap: 10px;
+  }
+
+  .review-form select {
+    width: 100%;
+  }
 }
 
 /*投稿全削除ボタン*/
@@ -660,6 +716,7 @@ footer {
   -ms-overflow-style: none;
         scrollbar-width: none;
 }
+
 
 
 
