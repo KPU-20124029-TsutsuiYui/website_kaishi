@@ -1,9 +1,10 @@
+
 // data.jsonからメニュー情報を取得して表示
 async function loadMenu() {
   try {
     const response = await fetch("https://raw.githubusercontent.com/KPU-20124029-TsutsuiYui/website_kaishi/refs/heads/main/JSON/data.JSON");
     const menuData = await response.json();
-    displayMenu(menuData);
+    displayMenuByCategory(menuData);
 
     // 検索ボタンのイベント
     const searchBtn = document.getElementById("searchButton");
@@ -38,7 +39,8 @@ function displayMenuByCategory(menuItems) {
     return;
   }
 
-   // categoryごとにグループ化
+
+  // categoryごとにグループ化
   const grouped = {};
   menuItems.forEach(item => {
     if (!grouped[item.category]) grouped[item.category] = [];
@@ -73,10 +75,10 @@ function displayMenuByCategory(menuItems) {
 
     categorySection.appendChild(categoryContainer);
     menuList.appendChild(categorySection);
-  }); 
+  });
 }
 
-/ 検索機能
+// 検索機能
 function filterMenu(menuData, keyword) {
   if (!keyword) {
     displayMenuByCategory(menuData);
@@ -92,11 +94,6 @@ function filterMenu(menuData, keyword) {
 
 // ページ読み込み時にメニューを表示
 loadMenu();
-
-
-
-
-
 
 
 
