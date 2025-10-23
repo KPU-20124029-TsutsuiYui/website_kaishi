@@ -56,7 +56,35 @@
         <div class="delete-all-container">
             <button id="deleteAllReviews">全ての口コミを削除</button>
         </div>
-        
+
+        <div class="filters-wrapper">
+            <div class="filter-group">
+                <label for="ratingFilter">評価：</label>
+                <select id="ratingFilter">
+                    <option value="all">指定なし</option>
+                    <option value="1">星1</option>
+                    <option value="2">星2</option>
+                    <option value="3">星3</option>
+                    <option value="4">星4</option>
+                    <option value="5">星5</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="categoryFilter">カテゴリー：</label>
+                <select id="categoryFilter">
+                    <option value="all">指定なし</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="menuFilter">メニュー：</label>
+                <select id="menuFilter">
+                    <option value="all">指定なし</option>
+                </select>
+            </div>
+        </div>
+
         <div id="reviewList" class="review-list">
             <!-- 投稿がここに追加される -->
         </div>
