@@ -486,13 +486,6 @@ background-color: #412301;
     height: auto;
     top: 40%;
   }
-
-  iframe {
-  width: 100%;
-    height: 110%;
-    top: 0%;
-    transform: translate(-50%, 0);
-  }
 }
 
 
@@ -853,6 +846,7 @@ background-color: #412301;
   -ms-overflow-style: none;
         scrollbar-width: none;
 }
+
 
 
 
