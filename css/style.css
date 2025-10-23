@@ -776,6 +776,42 @@ background-color: #412301;
   }
 }
 
+/* 口コミソート */
+.sort-container {
+  max-width: 700px;
+  margin: 0 auto 20px;
+  text-align: left; 
+  padding: 0 10px;
+}
+
+.sort-container label {
+  margin-right: 5px;
+  font-size: 14px;
+  color: #555;
+  font-weight: bold;
+}
+
+.sort-container select {
+  padding: 5px 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  background-color: white;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .sort-container {
+    padding: 0 20px;
+    text-align: left;
+    max-width: none;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
 /*投稿全削除ボタン*/
 .delete-all-container {
   text-align: center;
@@ -846,6 +882,7 @@ background-color: #412301;
   -ms-overflow-style: none;
         scrollbar-width: none;
 }
+
 
 
 
