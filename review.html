@@ -56,7 +56,7 @@
         <div class="delete-all-container">
             <button id="deleteAllReviews">全ての口コミを削除</button>
         </div>
-
+        
         <div class="filters-wrapper">
             <div class="filter-group">
                 <label for="ratingFilter">評価：</label>
@@ -83,6 +83,16 @@
                     <option value="all">指定なし</option>
                 </select>
             </div>
+        </div>
+
+        <div class="sort-container">
+            <label for="sortSelect">並び替え：</label>
+            <select id="sortSelect">
+                <option value="newest">新しい順</option>
+                <option value="oldest">古い順</option>
+                <option value="ratingDesc">評価の高い順</option>
+                <option value="ratingAsc">評価の低い順</option>
+            </select>
         </div>
 
         <div id="reviewList" class="review-list">
