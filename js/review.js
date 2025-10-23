@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (menuFilter) togglePlaceholderStyle(menuFilter);
 
     // data.JSONからメニューデータを非同期で取得
-    fetch("https://raw.githubusercontent.com/KPU-20124029-TsutsuiYui/website_kaishi/refs/heads/main/JSON/data.JSON")
+    fetch('https://raw.githubusercontent.com/KPU-20124029-TsutsuiYui/website_kaishi/refs/heads/main/JSON/data.JSON')
     .then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok ' + response.statusText);
@@ -295,4 +295,5 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
 
