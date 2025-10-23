@@ -9,14 +9,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const categorySelect = document.getElementById("categorySelect");
     const menuSelect = document.getElementById("menuSelect");
     
-    // フィルターの選択ボックス (今回追加/既存)
+    // フィルターの選択ボックス
     const ratingFilter = document.getElementById("ratingFilter");
     const categoryFilter = document.getElementById("categoryFilter");
     const menuFilter = document.getElementById("menuFilter");
     
+    // ソートの選択ボックス
+    const sortSelect = document.getElementById("sortSelect");
+
     let selectedRating = 0;
     let menuData = []; // メニューデータを格納する配列
     let savedReviews = []; // 口コミデータを格納する配列 (localStorageからロード)
+    let currentSort = 'newest'; // デフォルトのソート設定 ('投稿の新しい順')
 
     // プレースホルダースタイル適用/解除
     function togglePlaceholderStyle(selectElement) {
@@ -32,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     togglePlaceholderStyle(menuSelect);
     if (categoryFilter) togglePlaceholderStyle(categoryFilter);
     if (menuFilter) togglePlaceholderStyle(menuFilter);
+    // ソート選択はプレースホルダースタイルの対象外 (デフォルト値があるため)
 
     // data.JSONからメニューデータを非同期で取得
     fetch('https://raw.githubusercontent.com/KPU-20124029-TsutsuiYui/website_kaishi/refs/heads/main/JSON/data.JSON')
@@ -60,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (initialOption) {
             selectElement.appendChild(initialOption.cloneNode(true));
         } else {
-            // 初期化されていない場合はデフォルトの"指定なし"オプションを追加
+            // 初期化されていない場合はデフォルトの"指定なし"
             const defaultText = selectElement.id === 'categoryFilter' ? '指定なし' : 'カテゴリーを選択';
             const defaultVal = selectElement.id === 'categoryFilter' ? 'all' : '';
             const defaultOption = document.createElement("option");
@@ -91,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (initialOption) {
             selectElement.appendChild(initialOption.cloneNode(true));
         } else {
-            // 初期化されていない場合はデフォルトの"指定なし"オプションを追加
+            // 初期化されていない場合はデフォルトの"指定なし"
             const defaultText = selectElement.id === 'menuFilter' ? '指定なし' : 'メニューを選択';
             const defaultVal = selectElement.id === 'menuFilter' ? 'all' : '';
             const defaultOption = document.createElement("option");
@@ -171,14 +176,22 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // フィルター: 星評価変更時のイベント
+    // フィルター：星評価変更時のイベント
     if (ratingFilter) {
         ratingFilter.addEventListener('change', () => {
             displayReviews(savedReviews); // フィルター適用
         });
     }
+    
+    // ソート：選択変更時のイベント
+    if (sortSelect) {
+        sortSelect.addEventListener('change', () => {
+            currentSort = sortSelect.value;
+            displayReviews(savedReviews); // ソート適用
+        });
+    }
 
-    // --- 星の選択処理 ---
+    // 星の選択処理
     stars.forEach((star) => {
         star.addEventListener("click", () => {
             selectedRating = parseInt(star.dataset.value);
@@ -192,10 +205,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // --- データロードと投稿処理 ---
+    // データロードと投稿処理
      loadReviews();
      function loadReviews() {
         savedReviews = JSON.parse(localStorage.getItem("reviews")) || [];
+        // デフォルトのソートを適用 (新しい順)
+        currentSort = sortSelect ? sortSelect.value : 'newest'; 
         displayReviews(savedReviews);
     }
     
@@ -212,11 +227,21 @@ document.addEventListener("DOMContentLoaded", () => {
         
         const now = new Date();
         const timestamp = now.toLocaleString("ja-JP", {
-            year: "numeric", month: "2-digit", day: "2-digit",
-            hour: "2-digit", minute: "2-digit", second: "2-digit",
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
         });
         
-        const newReview = { category, menu, comment, rating: selectedRating, date: timestamp };
+        const newReview = {
+            category,
+            menu,
+            comment,
+            rating: selectedRating,
+            date: timestamp
+        };
         
         savedReviews.unshift(newReview);
         localStorage.setItem("reviews", JSON.stringify(savedReviews));
@@ -244,11 +269,30 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
     
-    // --- 口コミをHTMLに描画する関数 (フィルター処理を含む) ---
+    // ソートロジック関数
+    function sortReviews(reviews, sortType) {
+        switch (sortType) {
+            case 'oldest':
+                // 投稿の古い順: date文字列をDateオブジェクトに変換して昇順
+                return [...reviews].sort((a, b) => new Date(a.date) - new Date(b.date));
+            case 'ratingDesc':
+                // 評価の高い順: ratingを降順
+                return [...reviews].sort((a, b) => b.rating - a.rating);
+            case 'ratingAsc':
+                // 評価の低い順: ratingを昇順
+                return [...reviews].sort((a, b) => a.rating - b.rating);
+            case 'newest':
+            default:
+                // 投稿の新しい順: date文字列をDateオブジェクトに変換して降順
+                return [...reviews].sort((a, b) => new Date(b.date) - new Date(a.date));
+        }
+    }
+    
+    // 口コミをHTMLに描画する関数 (フィルター処理とソート処理を含む)
     function displayReviews(reviews) {
         reviewList.innerHTML = ""; // 既存のリストをクリア
 
-        // 1. フィルター条件の取得 (ratingFilterが存在しない場合は 'all' をデフォルトとする)
+        // 1. フィルター条件の取得
         const ratingFilterValue = ratingFilter ? ratingFilter.value : 'all';
         const categoryFilterValue = categoryFilter ? categoryFilter.value : 'all';
         const menuFilterValue = menuFilter ? menuFilter.value : 'all';
@@ -257,23 +301,24 @@ document.addEventListener("DOMContentLoaded", () => {
         let filteredReviews = reviews.filter(review => {
             // 星評価フィルター
             const isRatingMatch = ratingFilterValue === 'all' || review.rating === parseInt(ratingFilterValue);
-            
             // カテゴリーフィルター
             const isCategoryMatch = categoryFilterValue === 'all' || review.category === categoryFilterValue;
-            
             // メニューフィルター
             const isMenuMatch = menuFilterValue === 'all' || review.menu === menuFilterValue;
 
             return isRatingMatch && isCategoryMatch && isMenuMatch;
         });
 
-        // 3. 描画
-        if (filteredReviews.length === 0) {
+        // 3. ソートの適用 (フィルター後のリストをソート)
+        const sortedReviews = sortReviews(filteredReviews, currentSort);
+
+        // 4. 描画
+        if (sortedReviews.length === 0) {
             reviewList.innerHTML = "<p style='text-align:center; color:#8b5e3c; font-weight:bold;'>該当する口コミはありません。</p>";
             return;
         }
 
-        filteredReviews.forEach(review => {
+        sortedReviews.forEach(review => {
             const reviewItem = document.createElement("div");
             reviewItem.classList.add("review-item");
             
@@ -295,5 +340,3 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
-
-
